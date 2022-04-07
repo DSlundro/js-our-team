@@ -54,10 +54,7 @@ for (let i = 0; i < team.length; i++){
     console.log(person)
     console.log(`Name:      ${person.name}`);
     console.log(`Role:      ${person.role}`);
-    console.log(`Image:     ${person.image}`);
-    
-    document.getElementById('team').innerHTML = person.name
-    
+    console.log(`Image:     ${person.image}`);   
 }
 
 
