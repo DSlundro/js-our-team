@@ -9,6 +9,9 @@
 // BONUS 2 (solo se non sei giá fuso):
 //      organizzare i singoli membri in card/schede
 
+// seleziono elemento nella pagina
+let personInPage = document.querySelector('.team');
+
 
 // creo un array con le informazioni del team
 const team = [
@@ -50,13 +53,25 @@ console.log(team);
 for (let i = 0; i < team.length; i++){
     // creao una variabile per la singola persona
     let person = team[i];
+    // creo una variabile per gli elementi che saranno creati in DOM
+    let personIn = document.createElement('div');
+    // inserisco il contenuto per la DOM
+    personIn.innerHTML = `
+    <img src="./assets/img/${person.image}" alt="">
+    <h2>${person.name}</h2>
+    <p>${person.role}</p>
+    `;
+    // al contenuto aggoungo altre classi
+    personIn.classList.add('person','col-4','text-center', 'bg-white');
+    // appento ogni gruppo di elemento in DOM
+    personInPage.append(personIn);
+
     // stampo in console ogni singola informazione degli oggetti nel array
     console.log(person)
     console.log(`Name:      ${person.name}`);
     console.log(`Role:      ${person.role}`);
-    console.log(`Image:     ${person.image}`);   
+    console.log(`Image:     ${person.image}`);
 }
-
 
 
 
